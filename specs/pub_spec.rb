@@ -5,7 +5,9 @@ require_relative("../drink.rb")# tell it the drink file exist
 require_relative("../customer.rb") # tell it the customer file exist
 class TestPub < MiniTest::Test # declaring the test class
   def setup() # setting up instances to test against
-    @customer = Customer.new("Upul", 20.0, 18) #instance of customer class
+    @age1 = 18
+    @age2 = 17
+    @customer = Customer.new("Upul", 20.0, @age1) #instance of customer class
     @price1 = 15.0 # example of price
     @drink1 = Drink.new("Cider", @price1)# instance of the drink class
     @drink2 = Drink.new("Wine", 12.0)# instance of the drink class
@@ -33,7 +35,13 @@ class TestPub < MiniTest::Test # declaring the test class
     assert_equal(2, @pub.drink_given(@cellar))
   end
   def test_sell_drink__take_order()# test that the Customer is paying for drink
-    assert_equal(5.0, @pub.customer_order(@customer, @price1))
+    assert_equal(5.0, @pub.customer_order(@customer, @price1, @age1))
+  end
+  def test_customer_over_18()
+    assert_equal(true, @pub.customer_over_18(@age1))
+  end
+  def test_customer_under_18()
+    assert_equal(false, @pub.customer_over_18(@age2))
   end
 end
 # a method that takes in a customer and a drink
