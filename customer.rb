@@ -1,4 +1,4 @@
-class Customer
+class Customer 
   attr_reader :name, :wallet
   def initialize(name, wallet)
     @name = name
