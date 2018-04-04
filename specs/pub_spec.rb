@@ -5,7 +5,8 @@ require_relative("../drink.rb")
 
 class TestPub < MiniTest::Test
   def setup()
-    @drink1 = Drink.new("Cider", 15.0)
+    @price1 = 15.0
+    @drink1 = Drink.new("Cider", @price1)
     @drink2 = Drink.new("Wine", 12.0)
     @drink3 = Drink.new("Beer", 20.0)
     @cellar = [@drink1, @drink2, @drink3]
@@ -24,4 +25,13 @@ class TestPub < MiniTest::Test
   def test_cellar_count()
     assert_equal(3, @pub.cellar_count(@cellar))
   end
+  def test_sell_drink__payment_recieved()
+    assert_equal(25.0, @pub.sell_drink(@price1))
+  end
+  def test_sell_drink__drink_given()
+    assert_equal(2, @pub.cellar_count(@cellar))
+  end
 end
+# a method that takes in a customer and a drink
+# the customer buys the drink
+# the pub sells the drink3
