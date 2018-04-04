@@ -16,4 +16,7 @@ end
 def test_get_customer_name
   assert_equal("Upal", @customer.name)
 end
+def test_cash_in_wallet
+  assert_equal(30.0, @customer.wallet)
+end
 end
