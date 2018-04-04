@@ -5,7 +5,7 @@ require_relative("../drink.rb")# tell it the drink file exist
 require_relative("../customer.rb") # tell it the customer file exist
 class TestPub < MiniTest::Test # declaring the test class
   def setup() # setting up instances to test against
-    @customer = Customer.new("Upul", 20.0) #instance of customer class
+    @customer = Customer.new("Upul", 20.0, 18) #instance of customer class
     @price1 = 15.0 # example of price
     @drink1 = Drink.new("Cider", @price1)# instance of the drink class
     @drink2 = Drink.new("Wine", 12.0)# instance of the drink class
