@@ -22,7 +22,6 @@ class TestPub < MiniTest::Test
     assert_equal([], @pub.cellar)
   end
   def test_cellar_count()
-
     assert_equal(3, @pub.cellar_count(@cellar))
   end
 end
