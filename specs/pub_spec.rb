@@ -18,5 +18,11 @@ class TestPub < MiniTest::Test
   def test_get_pub_till()
     assert_equal(10.0, @pub.till)
   end
+  def test_if_cellar_is__empty()
+    assert_equal([], @pub.cellar)
+  end
+  def test_cellar_count()
 
+    assert_equal(3, @pub.cellar_count(@cellar))
+  end
 end

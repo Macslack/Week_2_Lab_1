@@ -4,10 +4,11 @@ class Pub
     @name = name
     @till = till
     @cellar = []
-
   end
-
-
+  def cellar_count(cellar)
+    return cellar.count
+  end
+  
 
 
 end
